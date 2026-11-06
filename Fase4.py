@@ -17,7 +17,7 @@ from abc import ABC, abstractmethod
 import tkinter as tk
 from tkinter import ttk, messagebox, scrolledtext
 
-# Configuración del sistema de Logs exigido en la guía
+# Configuración del sistema de Logs 
 logging.basicConfig(
     filename='app_errors.log',
     level=logging.INFO,
