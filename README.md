@@ -17,9 +17,5 @@ Incorpora un módulo robusto de gestión de excepciones personalizadas, encadena
 
 ## Integrantes del Grupo / Equipo Colaborativo
 * **Juan de la Cruz Durango Uribe**
-* [Nombre de Compañero 1]
-* [Nombre de Compañero 2]
-* [Nombre de Compañero 3]
-* [Nombre de Compañero 4]
 
 ---
