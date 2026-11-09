@@ -11,6 +11,7 @@ Incorpora un módulo robusto de gestión de excepciones personalizadas, encadena
 * **Institución:** Universidad Nacional Abierta y a Distancia (UNAD)
 * **Programa:** Ingeniería electronica
 * **Curso:** Programación (Código: 213023)
+* **Grupo:** 118
 * **Fase:** Fase 4 - Componente práctico - Prácticas simuladas
 
 ---
