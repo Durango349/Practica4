@@ -2,9 +2,9 @@
 =============================================================================
  Universidad Nacional Abierta y a Distancia - UNAD
  Escuela de Ciencias Básicas, Tecnología e Ingeniería - ECBTI
- Programa: Ingeniería electronica
+ Programa: Ingeniería electronica 
  Curso: Programación (Código: 213023)
- Grupo / Período: 2204
+ Grupo: 118 / Período: 2204
  Actividad: Fase 4 - Componente práctico - Prácticas simuladas
  Ejercicio: Sistema Integral de Gestión de Clientes, Servicios y Reservas (Software FJ)
  Estudiante: Juan de la Cruz Durango Uribe y Equipo Colaborativo
@@ -17,7 +17,7 @@ from abc import ABC, abstractmethod
 import tkinter as tk
 from tkinter import ttk, messagebox, scrolledtext
 
-# Configuración del sistema de Logs 
+# Configuración del sistema de Logs exigido en la guía
 logging.basicConfig(
     filename='app_errors.log',
     level=logging.INFO,
@@ -79,7 +79,6 @@ class Cliente(EntidadBase):
 
     @email.setter
     def email(self, valor):
-        # Validación fortalecida de correo usando expresiones regulares (Regex)
         patron_email = r"^[\w\.-]+@[\w\.-]+\.\w+$"
         if not re.match(patron_email, valor):
             raise ErrorClienteInvalido("Email address format is strictly invalid.")
@@ -91,7 +90,6 @@ class Cliente(EntidadBase):
 
     @telefono.setter
     def telefono(self, valor):
-        # Validación fortalecida de teléfono (exactamente entre 7 y 15 dígitos numéricos)
         if not valor.isdigit() or not (7 <= len(valor) <= 15):
             raise ErrorClienteInvalido("Phone number must contain only digits (7 to 15 characters).")
         self.__telefono = valor.strip()
@@ -274,8 +272,12 @@ class AppSoftwareFJ:
                     c1 = Cliente("C001", "Ana María Pérez", "ana.perez@email.com", "3104567890")
                     s1 = ReservaSala("S001", "North Executive Room", 150000.0, 10)
                     res1 = Reserva("R001", c1, s1)
+                    
+                    # Ajuste sugerido por el tutor: Confirmar y Procesar en Operación 1
                     msg = res1.confirmar()
-                    self.texto_consola.insert(tk.END, f"{msg}\nTotal cost with taxes: ${s1.calcular_costo(descuento=0.1)}\n")
+                    self.texto_consola.insert(tk.END, f"{msg}\n")
+                    self.texto_consola.insert(tk.END, f"{res1.procesar()}\n")
+                    self.texto_consola.insert(tk.END, f"Total cost with taxes: ${s1.calcular_costo(descuento=0.1)}\n")
 
                 elif i == 2:
                     self.texto_consola.insert(tk.END, "Attempting to register customer with invalid email...\n")
@@ -304,13 +306,12 @@ class AppSoftwareFJ:
                     Cliente("C005", "Sofía Castro", "sofia@email.com", "ABC12345")
 
                 elif i == 7:
-                    # Corrección Operación 7: Doble confirmación forzosa que dispara excepción controlada
                     c7 = Cliente("C006", "Jorge Higuita", "jorge@email.com", "3123334455")
                     s7 = ReservaSala("S004", "Creative Room", 100000.0, 6)
                     res7 = Reserva("R004", c7, s7)
                     self.texto_consola.insert(tk.END, f"{res7.confirmar()}\n")
                     self.texto_consola.insert(tk.END, "Attempting double confirmation (should trigger exception):\n")
-                    res7.confirmar() # Dispara excepción porque ya estaba confirmada
+                    res7.confirmar()  # Dispara excepción porque ya estaba confirmada
 
                 elif i == 8:
                     self.texto_consola.insert(tk.END, "Creating room with zero capacity...\n")
@@ -331,6 +332,11 @@ class AppSoftwareFJ:
             except (SoftwareFJException, ValueError, TypeError) as ex:
                 logging.warning(f"Exception caught in operation #{i}: {type(ex).__name__} - {ex}")
                 self.texto_consola.insert(tk.END, f"[CONTROLLED EXCEPTION CAUGHT] Failed safely -> {ex}\n")
+                
+                # Ajuste sugerido por el tutor: Mostrar la causa original del error (__cause__)
+                if ex.__cause__:
+                    self.texto_consola.insert(tk.END, f"    Original cause: {ex.__cause__}\n")
+
             else:
                 self.texto_consola.insert(tk.END, f"[STATUS] Operation #{i} completed successfully.\n")
             finally:
