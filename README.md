@@ -18,5 +18,8 @@ Incorpora un módulo robusto de gestión de excepciones personalizadas, encadena
 
 ## Integrantes del Grupo / Equipo Colaborativo
 * **Juan de la Cruz Durango Uribe**
+* **Oscar Iván Gordillo**
+* **Jakeline Alzate Gomes**
+* 
 
 ---
