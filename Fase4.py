@@ -545,12 +545,6 @@ class AppSoftwareFJ:
         except Exception as ex:
             messagebox.showerror("Unexpected Error", str(ex))
 
-
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = AppSoftwareFJ(root)
-    root.mainloop()
-
 # ==========================================
 # 6. PUNTO DE ENTRADA DEL PROGRAMA
 # ==========================================
