@@ -142,14 +142,14 @@ class Cliente(EntidadBase):
         # Se eliminan espacios al inicio y al final antes de validar.
         valor = valor.strip()
     
-        if not valor.isdigit() or not (7 <= len(valor) <= 15):
+        if not (valor.isascii() and valor.isdigit() and 7 <= len(valor) <= 15):
             raise ErrorClienteInvalido("Phone number must contain only digits (7 to 15 characters).")
         self.__telefono = valor
 
     # POLIMORFISMO:
     # Se implementa el método abstracto heredado de EntidadBase. Esta versión muestra la información específica de un cliente.
     def obtener_detalle(self) -> str:
-        return f"Customer [ID: {self._identificador}, Name: {self.__nombre}, Email: {self.__email}]"
+        return f"Customer [ID: {self._identificador}, Name: {self.__nombre}, Email: {self.__email}, Phone:{self._telefone}]"
 
 # ==========================================================
 # CLASE ABSTRACTA SERVICIO                         
