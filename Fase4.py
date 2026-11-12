@@ -2,12 +2,12 @@
 =============================================================================
  Universidad Nacional Abierta y a Distancia - UNAD
  Escuela de Ciencias Básicas, Tecnología e Ingeniería - ECBTI
- Programa: Ingeniería electronica
+ Programa: Ingeniería electrónica
  Curso: Programación (Código: 213023)
  Grupo / Período: 2204
  Actividad: Fase 4 - Componente práctico - Prácticas simuladas
  Ejercicio: Sistema Integral de Gestión de Clientes, Servicios y Reservas (Software FJ)
- Estudiante: Juan de la Cruz Durango Uribe y Jakeline Alzate Gómez
+ Estudiantes: Juan de la Cruz Durango Uribe, Jakeline Alzate Gómez, Oscar Ivan Gordillo Ramirez
 =============================================================================
 """
 
@@ -135,9 +135,16 @@ class Cliente(EntidadBase):
     # Se verifica que el teléfono contenga únicamente números y tenga una longitud entre 7 y 15 dígitos.
     @telefono.setter
     def telefono(self, valor):
+     # Primero se valida el tipo de dato: isdigit() solo puede usarse con texto (str).
+        if not isinstance(valor, str):
+            raise ErrorClienteInvalido("Phone number must be provided as text (string).")
+
+        # Se eliminan espacios al inicio y al final antes de validar.
+        valor = valor.strip()
+    
         if not valor.isdigit() or not (7 <= len(valor) <= 15):
             raise ErrorClienteInvalido("Phone number must contain only digits (7 to 15 characters).")
-        self.__telefono = valor.strip()
+        self.__telefono = valor
 
     # POLIMORFISMO:
     # Se implementa el método abstracto heredado de EntidadBase. Esta versión muestra la información específica de un cliente.
