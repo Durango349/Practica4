@@ -20,6 +20,4 @@ Incorpora un módulo robusto de gestión de excepciones personalizadas, encadena
 * **Juan de la Cruz Durango Uribe**
 * **Oscar Iván Gordillo**
 * **jakeline Alzate Gómez**
-* 
-
 ---
