@@ -7,7 +7,7 @@
  Grupo / Período: 2204
  Actividad: Fase 4 - Componente práctico - Prácticas simuladas
  Ejercicio: Sistema Integral de Gestión de Clientes, Servicios y Reservas (Software FJ)
- Estudiantes: Juan de la Cruz Durango Uribe, Jakeline Alzate Gómez, Oscar Ivan Gordillo Ramirez
+ Estudiantes: Juan de la Cruz Durango Uribe, Jakeline Alzate Gómez, Oscar Ivan Gordillo Ramirez, Isabel Zapata
 =============================================================================
 """
 
