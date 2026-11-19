@@ -11,21 +11,33 @@ El sistema cuenta con herramientas para registrar y validar información de los 
 **Funcionalidades principales:**
 
 *Registro y validación de clientes.
+
 *Gestión de reservas de salas, alquiler de equipos y asesorías especializadas.
+
 *Cálculo de costos de los servicios.
+
 *Confirmación, cancelación y procesamiento de reservas.
+
 *Manejo de excepciones personalizadas.
+
 *Registro de eventos y errores mediante logging.
+
 *Interfaz gráfica desarrollada con Tkinter.
+
 *Simulación automática de diez operaciones.
+
 *Formulario interactivo para registrar y validar clientes.
 
 **Tecnologías utilizadas Python.**
 
 *Programación orientada a objetos.
+
 *Biblioteca Tkinter.
+
 *Módulo Logging.
+
 *Expresiones regulares (RE).
+
 
 **Objetivo**
 
