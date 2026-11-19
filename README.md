@@ -1,10 +1,37 @@
 # Sistema Integral de Gestión de Clientes, Servicios y Reservas (Software FJ)
 
 ## Descripcion del proyecto
-Aplicación desarrollada en Python aplicando los principios de la Programación Orientada a Objetos (POO) para la empresa **Software FJ**. El sistema permite gestionar de forma simulada clientes, reservas y servicios especializados (reservas de salas, alquiler de equipos y asesorías) sin depender de motores de bases de datos relacionales. 
 
-Incorpora un módulo robusto de gestión de excepciones personalizadas, encadenamiento de errores (`raise ... from ...`), persistencia de eventos en un archivo de registros (`app_errors.log`) e Interfaz Gráfica de Usuario (GUI) desarrollada con **Tkinter**.
+**Software FJ es una aplicación desarrollada en Python que permite gestionar clientes, servicios y reservas mediante programación orientada a objetos.**
 
+**Descripción del sistema**
+
+El sistema cuenta con herramientas para registrar y validar información de los clientes, administrar diferentes tipos de servicios, calcular costos y controlar los estados de las reservas.
+
+**Funcionalidades principales:**
+
+*Registro y validación de clientes.
+*Gestión de reservas de salas, alquiler de equipos y asesorías especializadas.
+*Cálculo de costos de los servicios.
+*Confirmación, cancelación y procesamiento de reservas.
+*Manejo de excepciones personalizadas.
+*Registro de eventos y errores mediante logging.
+*Interfaz gráfica desarrollada con Tkinter.
+*Simulación automática de diez operaciones.
+*Formulario interactivo para registrar y validar clientes.
+
+**Tecnologías utilizadas Python.**
+
+*Programación orientada a objetos.
+*Biblioteca Tkinter.
+*Módulo Logging.
+*Expresiones regulares (RE).
+
+**Objetivo**
+
+Desarrollar un sistema que integre los conceptos de abstracción, encapsulamiento, herencia y polimorfismo, facilitando la administración de clientes, servicios y reservas mediante una aplicación gráfica.
+
+Simulación automática de diez operaciones y registro interactivo de clientes.
 ---
 
 ## curso y componente 
@@ -20,4 +47,5 @@ Incorpora un módulo robusto de gestión de excepciones personalizadas, encadena
 * **Juan de la Cruz Durango Uribe**
 * **Oscar Iván Gordillo**
 * **jakeline Alzate Gómez**
+* **Isabel Zapata**
 ---
